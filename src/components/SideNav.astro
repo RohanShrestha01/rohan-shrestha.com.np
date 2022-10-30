@@ -1,0 +1,21 @@
+---
+const navLinks = ['#home', '#skills', '#projects', '#about', '#contact'];
+---
+
+<ul class="flex flex-col gap-4">
+  {
+    navLinks.map(link => (
+      <li>
+        <a href={link} class="circle__link">
+          <div class={`h-3.5 w-3.5 cursor-pointer rounded-full border`} />
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .circle__link .active {
+    background-color: white;
+  }
+</style>

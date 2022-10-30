@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon';
+
+const icons = [
+  { name: 'clarity:email-line', href: 'mailto: shrestharohan039@gmail.com' },
+  { name: 'iconoir:github', href: 'https://github.com/RohanShrestha01' },
+  { name: 'simple-line-icons:social-linkedin', href: '' },
+  { name: 'simple-line-icons:social-twitter', href: '' },
+];
+---
+
+<ul class="flex flex-col gap-6">
+  {
+    icons.map(icon => (
+      <li>
+        <a href={icon.href} target="_blank">
+          <Icon name={icon.name} class="h-6 cursor-pointer" />
+        </a>
+      </li>
+    ))
+  }
+</ul>

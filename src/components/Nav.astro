@@ -1,0 +1,66 @@
+---
+const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
+---
+
+<nav class="flex-1 flex justify-center">
+  <ul class="flex gap-10">
+    {
+      navTitles.map(title => (
+        <li class="cursor-pointer">
+          <a
+            href={'#' + title}
+            class="nav__link py-1 uppercase text-neutral-400"
+          >
+            {title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .nav__link.active {
+    color: white;
+    border-bottom: 1px solid white;
+  }
+</style>
+
+<script>
+  const circleLinkElements = document.getElementsByClassName(
+    'circle__link'
+  ) as HTMLCollectionOf<HTMLAnchorElement>;
+
+  const navLinkElements = document.getElementsByClassName(
+    'nav__link'
+  ) as HTMLCollectionOf<HTMLAnchorElement>;
+
+  const linkElementsArr = [circleLinkElements, navLinkElements];
+
+  const activeLinkHandler = (): void => {
+    linkElementsArr.forEach((linkElements, i) => {
+      let activeLinkFound = false;
+
+      for (const linkEl of linkElements) {
+        let activeToggleEl: HTMLAnchorElement | HTMLDivElement = linkEl;
+        if (i === 0)
+          activeToggleEl = linkEl.firstElementChild as HTMLDivElement;
+
+        activeToggleEl.classList.remove('active');
+
+        if (linkEl.hash === window.location.hash) {
+          activeToggleEl.classList.add('active');
+          activeLinkFound = true;
+        }
+      }
+
+      let homeEl: HTMLAnchorElement | HTMLDivElement = linkElements[0];
+      if (i === 0) homeEl = linkElements[0].firstElementChild as HTMLDivElement;
+
+      if (!activeLinkFound) homeEl.classList.add('active');
+    });
+  };
+
+  activeLinkHandler();
+  window.addEventListener('hashchange', activeLinkHandler);
+</script>

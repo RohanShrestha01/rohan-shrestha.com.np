@@ -1,0 +1,10 @@
+---
+const { classes } = Astro.props as { classes?: string };
+const lineClass = 'border-l-2 translate-x-1/2 h-16';
+---
+
+<aside class={`fixed top-1/2 -translate-y-1/2 flex flex-col ${classes}`}>
+  <div class={lineClass}></div>
+  <slot />
+  <div class={lineClass}></div>
+</aside>

@@ -1,0 +1,33 @@
+---
+import SideLayout from './SideLayout.astro';
+import Header from '../components/Header.astro';
+import SideNav from '../components/SideNav.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+
+export interface Props {
+  siteTitle?: string;
+  description?: string;
+}
+
+const {
+  siteTitle = 'Rohan Shrestha: Personal Site',
+  description = 'The personal site of Rohan Shrestha...',
+} = Astro.props as Props;
+---
+
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" property="og:description" content={description} />
+    <title>{siteTitle}</title>
+  </head>
+  <body class="bg-[#2f3140] text-gray-100">
+    <Header />
+    <SideLayout classes="left-10 gap-6"><SocialLinks /></SideLayout>
+    <SideLayout classes="right-10 gap-4"><SideNav /></SideLayout>
+    <main><slot /></main>
+  </body>
+</html>
