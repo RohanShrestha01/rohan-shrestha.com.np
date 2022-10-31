@@ -9,7 +9,7 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
         <li class="cursor-pointer">
           <a
             href={'#' + title}
-            class="nav__link py-1 uppercase text-neutral-400"
+            class="nav__link border-b-neutral-400 py-1 uppercase text-neutral-400 hover:border-b"
           >
             {title}
           </a>
@@ -21,8 +21,8 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
 
 <style>
   .nav__link.active {
-    color: white;
-    border-bottom: 1px solid white;
+    color: theme('textColor.gray.100');
+    border-bottom: 1px solid theme('textColor.gray.100');
   }
 </style>
 
@@ -43,8 +43,7 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
 
       for (const linkEl of linkElements) {
         let activeToggleEl: HTMLAnchorElement | HTMLDivElement = linkEl;
-        if (i === 0)
-          activeToggleEl = linkEl.firstElementChild as HTMLDivElement;
+        if (i === 0) activeToggleEl = linkEl.querySelector('div')!;
 
         activeToggleEl.classList.remove('active');
 
@@ -55,7 +54,7 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
       }
 
       let homeEl: HTMLAnchorElement | HTMLDivElement = linkElements[0];
-      if (i === 0) homeEl = linkElements[0].firstElementChild as HTMLDivElement;
+      if (i === 0) homeEl = linkElements[0].querySelector('div')!;
 
       if (!activeLinkFound) homeEl.classList.add('active');
     });

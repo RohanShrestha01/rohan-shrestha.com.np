@@ -6,8 +6,13 @@ const navLinks = ['#home', '#skills', '#projects', '#about', '#contact'];
   {
     navLinks.map(link => (
       <li>
-        <a href={link} class="circle__link">
-          <div class={`h-3.5 w-3.5 cursor-pointer rounded-full border`} />
+        <a href={link} class="circle__link group relative">
+          <span class="invisible absolute right-[200%] scale-0 text-xs uppercase transition-all group-hover:visible group-hover:scale-100">
+            {link.slice(1)}
+          </span>
+          <div
+            class={`h-3.5 w-3.5 cursor-pointer rounded-full border transition-transform group-hover:scale-125`}
+          />
         </a>
       </li>
     ))
@@ -16,6 +21,6 @@ const navLinks = ['#home', '#skills', '#projects', '#about', '#contact'];
 
 <style>
   .circle__link .active {
-    background-color: white;
+    background-color: theme('textColor.gray.100');
   }
 </style>
