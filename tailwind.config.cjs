@@ -7,7 +7,12 @@ module.exports = {
       sans: ['Montserrat', 'sans-serif'],
       cursive: ['Montez', 'cursive'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#2f3140',
+        'primary-dark': '#272936',
+      },
+    },
   },
   plugins: [],
 };
