@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon';
+
+const frontend = [
+  { icon: 'logos:html-5', language: 'HTML5' },
+  { icon: 'logos:css-3', language: 'CSS3' },
+  { icon: 'logos:tailwindcss-icon', language: 'Tailwind' },
+  { icon: 'logos:javascript', language: 'JavaScript' },
+  { icon: 'logos:typescript-icon', language: 'TypeScript' },
+  { icon: 'logos:react', language: 'ReactJS' },
+  { icon: 'logos:nextjs-icon', language: 'NextJS' },
+];
+
+const backend = [
+  { icon: 'logos:nodejs-icon', language: 'NodeJS' },
+  { icon: 'logos:express', language: 'Express' },
+];
+
+const database = [
+  { icon: '', language: 'MySQL' },
+  { icon: '', language: 'MongoDB' },
+];
+
+const others = [
+  { icon: 'logos:sass', language: 'SASS / SCSS' },
+  { icon: 'logos:material-ui', language: 'Material UI' },
+  { icon: 'logos:react-query-icon', language: 'React Query' },
+  { icon: 'logos:redux', language: 'Redux' },
+  { icon: 'logos:react-router', language: 'React Router' },
+];
+
+const skills = [
+  { title: 'Frontend', list: frontend },
+  { title: 'Backend', list: backend },
+];
+---
+
+<section id="skills">
+  <h1 class="text-center">Skills</h1>
+  <p class="text-center">These are the technologies I've worked with</p>
+  <article>
+    {
+      skills.map(({ title, list }) => (
+        <div>
+          <h2>{title}</h2>
+          <ul>
+            {list.map(({ icon, language }) => (
+              <li>
+                <Icon name={icon} class="h-4 w-4" />
+                <span>{language}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </article>
+</section>

@@ -7,3 +7,17 @@
     @apply border border-gray-100 px-4 py-2;
   }
 }
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #495670;
+  border: 3px solid #2f3140;
+  border-radius: 5rem;
+}
