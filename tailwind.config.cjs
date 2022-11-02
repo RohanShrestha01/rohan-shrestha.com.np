@@ -8,6 +8,9 @@ module.exports = {
       cursive: ['Montez', 'cursive'],
     },
     extend: {
+      screens: {
+        xs: '425px',
+      },
       colors: {
         primary: '#2f3140',
         'primary-dark': '#272936',
