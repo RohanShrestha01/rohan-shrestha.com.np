@@ -16,7 +16,7 @@ module.exports = {
         'primary-dark': '#272936',
       },
       boxShadow: {
-        large: '-10px 0px 30px -15px rgba(23,24,32,0.7);',
+        drawer: '-10px 0px 30px -15px rgba(23,24,32,0.7)',
       },
     },
   },

@@ -3,7 +3,7 @@ import Nav from './Nav.astro';
 ---
 
 <header
-  class="flex items-center fixed top-0 w-screen justify-between z-20 px-5 py-6 xs:px-7 sm:px-10 md:justify-start md:px-7 lg:px-12 lg:py-7"
+  class="flex items-center fixed top-0 w-screen justify-between z-20 transition-all duration-300 ease-in-out px-5 py-6 xs:px-7 sm:px-10 md:justify-start md:px-7 lg:px-12 lg:py-7"
 >
   <div
     id="backdrop"
@@ -14,7 +14,7 @@ import Nav from './Nav.astro';
     ><a href="/">Rohan Shrestha</a>
   </span>
   <Nav />
-  <span class="hidden md:inline-block md:flex-1 md:text-right">
+  <span class="hidden lg:inline-block lg:flex-1 lg:text-right">
     <button class="btn-primary">RESUME</button>
   </span>
   <button
@@ -43,4 +43,34 @@ import Nav from './Nav.astro';
     visibility: visible;
     opacity: 1;
   }
+
+  .scroll-header {
+    backdrop-filter: blur(10px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 10px 30px -10px rgba(23, 24, 32, 0.7);
+  }
 </style>
+
+<script>
+  // To hide header when user scrolls down and show when the user scrolls up
+  const headerEl = document.querySelector('header')!;
+  const headerBottom = headerEl.offsetTop + headerEl.offsetHeight;
+  let prevScrollPos = 0;
+
+  const scrollHandler = () => {
+    const currentScrollPos = window.scrollY;
+    if (prevScrollPos > currentScrollPos || currentScrollPos < headerBottom)
+      headerEl.style.top = '0';
+    else headerEl.style.top = `-${headerBottom}px`;
+
+    // To change styling of header when it is displayed on scroll
+    if (currentScrollPos > headerBottom)
+      headerEl.classList.add('scroll-header');
+    else headerEl.classList.remove('scroll-header');
+
+    prevScrollPos = currentScrollPos;
+  };
+
+  window.addEventListener('scroll', scrollHandler);
+</script>
