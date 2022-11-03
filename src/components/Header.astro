@@ -56,7 +56,7 @@ import Nav from './Nav.astro';
   // To hide header when user scrolls down and show when the user scrolls up
   const headerEl = document.querySelector('header')!;
   const headerBottom = headerEl.offsetTop + headerEl.offsetHeight;
-  let prevScrollPos = 0;
+  let prevScrollPos = window.scrollY;
 
   const scrollHandler = () => {
     const currentScrollPos = window.scrollY;

@@ -2,29 +2,27 @@
 import { Icon } from 'astro-icon';
 
 const frontend = [
-  { icon: 'logos:html-5', language: 'HTML5' },
-  { icon: 'logos:css-3', language: 'CSS3' },
-  { icon: 'logos:tailwindcss-icon', language: 'Tailwind' },
+  { icon: 'vscode-icons:file-type-html', language: 'HTML5' },
+  { icon: 'vscode-icons:file-type-css', language: 'CSS3' },
   { icon: 'logos:javascript', language: 'JavaScript' },
   { icon: 'logos:typescript-icon', language: 'TypeScript' },
   { icon: 'logos:react', language: 'ReactJS' },
   { icon: 'logos:nextjs-icon', language: 'NextJS' },
+  { icon: 'astro', language: 'Astro' },
 ];
 
 const backend = [
   { icon: 'logos:nodejs-icon', language: 'NodeJS' },
-  { icon: 'logos:express', language: 'Express' },
-];
-
-const database = [
-  { icon: 'logos:mysql', language: 'MySQL' },
-  { icon: 'logos:mongodb', language: 'MongoDB' },
+  { icon: 'express', language: 'Express' },
+  { icon: 'logos:mysql-icon', language: 'MySQL' },
+  { icon: 'mongodb', language: 'MongoDB' },
 ];
 
 const others = [
-  { icon: 'logos:sass', language: 'SASS / SCSS' },
+  { icon: 'logos:tailwindcss-icon', language: 'Tailwind' },
+  { icon: 'logos:sass', language: 'SASS' },
   { icon: 'logos:material-ui', language: 'Material UI' },
-  { icon: 'logos:react-query-icon', language: 'React Query' },
+  { icon: 'react-query', language: 'React Query' },
   { icon: 'logos:redux', language: 'Redux' },
   { icon: 'logos:react-router', language: 'React Router' },
 ];
@@ -32,22 +30,26 @@ const others = [
 const skills = [
   { title: 'Frontend', list: frontend },
   { title: 'Backend', list: backend },
+  { title: 'Other Libraries', list: others },
 ];
 ---
 
-<section id="skills">
+<section id="skills" class="py-12">
   <h1 class="text-3xl font-bold">Skills</h1>
-  <p class="">These are the technologies I've worked with</p>
+  <div class="rounded-full border-t-4 w-14 mt-1.5"></div>
+  <p class="mt-4">These are the technologies I've worked with</p>
   <article>
     {
       skills.map(({ title, list }) => (
-        <div>
-          <h2>{title}</h2>
-          <ul>
+        <div class="mt-8">
+          <h2 class="mb-4 text-lg font-bold">{title}</h2>
+          <ul class="ml-4 grid gap-y-4 gap-x-8 sm:gap-x-12">
             {list.map(({ icon, language }) => (
-              <li>
-                <Icon name={icon} class="h-4 w-4" />
-                <span>{language}</span>
+              <li class="flex w-14 flex-col items-center gap-2 sm:w-16">
+                <div class="flex h-14 w-full items-center justify-center rounded-full bg-white sm:h-16">
+                  <Icon name={icon} class="h-7 w-7 sm:h-8 sm:w-8" />
+                </div>
+                <span class="text-center text-sm sm:text-base">{language}</span>
               </li>
             ))}
           </ul>
@@ -56,3 +58,9 @@ const skills = [
     }
   </article>
 </section>
+
+<style>
+  ul {
+    grid-template-columns: repeat(auto-fill, 4rem);
+  }
+</style>
