@@ -52,7 +52,7 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
 
   const linkElementsArr = [circleLinkElements, navLinkElements];
 
-  const activeLinkHandler = (): void => {
+  const activeLinkHandler = (determiningValue: string): void => {
     linkElementsArr.forEach((linkElements, i) => {
       let activeLinkFound = false;
 
@@ -62,7 +62,7 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
 
         activeToggleEl.classList.remove('active');
 
-        if (linkEl.hash === window.location.hash) {
+        if (linkEl.hash === determiningValue) {
           activeToggleEl.classList.add('active');
           activeLinkFound = true;
         }
@@ -75,8 +75,10 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
     });
   };
 
-  activeLinkHandler();
-  window.addEventListener('hashchange', activeLinkHandler);
+  activeLinkHandler(window.location.hash);
+  window.addEventListener('hashchange', () =>
+    activeLinkHandler(window.location.hash)
+  );
 
   // For Hamburger Click Functionality
   const hamburgerBtnEl = document.getElementById('hamburger-btn')!;
@@ -93,4 +95,28 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
 
   // Close Drawer when clicked
   backdropEl.addEventListener('click', drawerFunctionalityHandler);
+
+  // Change the active nav when scroll
+  const sectionElements = document.querySelectorAll('section.screen');
+
+  const obsOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: [0.2, 0.9],
+  };
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const activeSectionId = '#' + entry.target.id;
+        if (entry.intersectionRatio > 0.9) activeLinkHandler(activeSectionId);
+        // Check if element is coming from top into view
+        else if (entry.target.getBoundingClientRect().top < 0)
+          activeLinkHandler(activeSectionId);
+      }
+    });
+  }, obsOptions);
+
+  sectionElements.forEach(sectionEl => {
+    observer.observe(sectionEl);
+  });
 </script>
