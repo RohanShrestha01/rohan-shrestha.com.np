@@ -1,6 +1,3 @@
----
-import { Icon } from 'astro-icon';
-
 const frontend = [
   { icon: 'vscode-icons:file-type-html', language: 'HTML5' },
   { icon: 'vscode-icons:file-type-css', language: 'CSS3' },
@@ -27,40 +24,8 @@ const others = [
   { icon: 'logos:react-router', language: 'React Router' },
 ];
 
-const skills = [
+export default [
   { title: 'Frontend', list: frontend },
   { title: 'Backend', list: backend },
   { title: 'Other Libraries', list: others },
 ];
----
-
-<section id="skills" class="screen py-12">
-  <h1 class="text-3xl font-bold">Skills</h1>
-  <div class="rounded-full border-t-4 w-14 mt-1.5"></div>
-  <p class="mt-4">These are the technologies I've worked with</p>
-  <article>
-    {
-      skills.map(({ title, list }) => (
-        <div class="mt-8">
-          <h2 class="mb-4 text-lg font-bold">{title}</h2>
-          <ul class="ml-4 grid gap-y-4 gap-x-8 sm:gap-x-12">
-            {list.map(({ icon, language }) => (
-              <li class="flex w-14 flex-col items-center gap-2 sm:w-16">
-                <div class="flex h-14 w-full items-center justify-center rounded-full bg-white sm:h-16">
-                  <Icon name={icon} class="h-7 w-7 sm:h-8 sm:w-8" />
-                </div>
-                <span class="text-center text-sm sm:text-base">{language}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))
-    }
-  </article>
-</section>
-
-<style>
-  ul {
-    grid-template-columns: repeat(auto-fill, 4rem);
-  }
-</style>

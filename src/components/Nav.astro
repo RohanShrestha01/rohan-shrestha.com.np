@@ -11,10 +11,7 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
     {
       navTitles.map(title => (
         <li class="cursor-pointer text-center">
-          <a
-            href={'#' + title}
-            class="nav__link border-b-neutral-400 py-1 uppercase text-neutral-400 hover:border-b"
-          >
+          <a href={'#' + title} class="nav__link py-1 uppercase hover:border-b">
             {title}
           </a>
         </li>
@@ -29,7 +26,6 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
 
 <style>
   .active {
-    color: theme('textColor.gray.100');
     border-bottom: 1px solid theme('textColor.gray.100');
   }
 
@@ -101,17 +97,13 @@ const navTitles = ['home', 'skills', 'projects', 'about', 'contact'];
 
   const obsOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: [0.2, 0.9],
+    rootMargin: '-35% 0px -60% 0px',
   };
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const activeSectionId = '#' + entry.target.id;
-        if (entry.intersectionRatio > 0.9) activeLinkHandler(activeSectionId);
-        // Check if element is coming from top into view
-        else if (entry.target.getBoundingClientRect().top < 0)
-          activeLinkHandler(activeSectionId);
+        activeLinkHandler(activeSectionId);
       }
     });
   }, obsOptions);
