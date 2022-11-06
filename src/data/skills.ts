@@ -4,7 +4,7 @@ const frontend = [
   { icon: 'logos:javascript', language: 'JavaScript' },
   { icon: 'logos:typescript-icon', language: 'TypeScript' },
   { icon: 'logos:react', language: 'ReactJS' },
-  { icon: 'logos:nextjs-icon', language: 'NextJS' },
+  /* { icon: 'logos:nextjs-icon', language: 'NextJS' }, */
   { icon: 'astro', language: 'Astro' },
 ];
 
@@ -12,7 +12,7 @@ const backend = [
   { icon: 'logos:nodejs-icon', language: 'NodeJS' },
   { icon: 'express', language: 'Express' },
   { icon: 'logos:mysql-icon', language: 'MySQL' },
-  { icon: 'mongodb', language: 'MongoDB' },
+  /* { icon: 'mongodb', language: 'MongoDB' }, */
 ];
 
 const others = [

@@ -6,15 +6,15 @@ import projects from '../../data/portfolio';
 ---
 
 <SectionLayout heading="Projects" id="projects" text="Some things I've built">
-  <ul>
+  <ul class="mt-10 flex flex-wrap gap-10 justify-center lg:mt-14 lg:block">
     {
       projects.map((project, i) => (
         <li
-          class={`${i === 0 ? 'mt-14' : 'mt-28'} flex ${
-            i % 2 !== 0 ? 'text-end flex-row-reverse' : ''
-          } items-center`}
+          class={`${i !== 0 && 'lg:mt-28'} flex ${
+            i % 2 === 0 ? 'lg:flex-row' : 'lg:text-end lg:flex-row-reverse'
+          } bg-primary-dark shadow-b max-w-xs flex-col-reverse justify-end rounded-b-md lg:max-w-none lg:items-center lg:justify-start lg:rounded-none lg:bg-transparent lg:shadow-none`}
         >
-          <div class="1.5xl:basis-5/12 z-10 lg:basis-3/12 xl:basis-4/12">
+          <div class="1.5xl:basis-5/12 z-10 px-6 py-5 lg:basis-3/12 lg:p-0 xl:basis-4/12">
             <h2 class="mb-0.5 text-xs font-medium">PROJECT #{i + 1}</h2>
             <h1 class="text-lg font-semibold uppercase">{project.title}</h1>
             <div
@@ -26,26 +26,26 @@ import projects from '../../data/portfolio';
             >
               <p
                 class={`${
-                  i % 2 === 0 ? 'shadow-bl ' : 'shadow-br'
-                } bg-primary-dark my-5 rounded px-6 py-4 lg:text-[15px] 2xl:text-base`}
+                  i % 2 === 0 ? 'lg:shadow-bl ' : 'lg:shadow-br'
+                } lg:bg-primary-dark py-4 text-[15px] lg:my-5 lg:rounded lg:px-6 2xl:text-base`}
               >
                 {project.description}
               </p>
               <ul
                 class={`flex flex-wrap ${
-                  i % 2 !== 0 ? 'justify-end' : ''
-                } gap-4 text-sm`}
+                  i % 2 !== 0 && 'lg:justify-end'
+                } gap-x-2.5 gap-y-0.5 text-sm lg:gap-4`}
               >
                 {project.languages.map(language => (
-                  <li class="bg-primary-dark shadow-b rounded-full px-4 py-2">
+                  <li class="lg:bg-primary-dark lg:shadow-b lg:rounded-full lg:px-4 lg:py-2">
                     {language}
                   </li>
                 ))}
               </ul>
             </div>
             <div
-              class={`${i % 2 === 0 ? 'ml-2' : 'mr-2 justify-end'} mt-8 flex
-              gap-4`}
+              class={`${i % 2 !== 0 && 'lg:mr-2 lg:justify-end'} mt-3 flex gap-4
+              lg:mt-8 lg:ml-2`}
             >
               <a href={project.githubLink} target="_blank">
                 <Icon name="iconoir:github" class="h-6" />
@@ -60,8 +60,8 @@ import projects from '../../data/portfolio';
               <img
                 src={project.imageLink}
                 class={`${
-                  i % 2 === 0 ? 'shadow-br' : 'shadow-bl'
-                } rounded transition-all duration-300 hover:scale-105 hover:brightness-100 lg:brightness-90`}
+                  i % 2 === 0 ? 'lg:shadow-br' : 'lg:shadow-bl'
+                } rounded-t-md lg:rounded lg:brightness-90 lg:transition-all lg:duration-300 lg:hover:scale-105 lg:hover:brightness-100`}
               />
             </a>
           </div>

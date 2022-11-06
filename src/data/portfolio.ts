@@ -22,7 +22,7 @@ export default [
     description:
       'My Personal Website built with Astro for fast website, server-side rendering (SSR) and good developer experience (DX) and Tailwind for styling.',
     languages: ['Astro', 'Tailwind', 'TypeScript'],
-    githubLink: 'https://github.com/RohanShrestha01/firestore-react',
+    githubLink: 'https://github.com/RohanShrestha01/rohanshrestha.dev',
     websiteLink: 'https://rohanshrestha.dev',
     imageLink: '/portfolio-site.png',
   },
