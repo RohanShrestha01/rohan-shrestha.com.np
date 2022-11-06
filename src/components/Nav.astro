@@ -37,7 +37,7 @@ const navTitles = ['home', 'skills', 'projects', /* 'about', */ 'contact'];
 </style>
 
 <script>
-  // For adding 'active' class to Nav Links according to hash in url
+  // For adding 'active' class to Nav Links according to scroll
   const circleLinkElements = document.getElementsByClassName(
     'circle__link'
   ) as HTMLCollectionOf<HTMLAnchorElement>;
@@ -48,53 +48,23 @@ const navTitles = ['home', 'skills', 'projects', /* 'about', */ 'contact'];
 
   const linkElementsArr = [circleLinkElements, navLinkElements];
 
+  const sectionElements = document.querySelectorAll('section.screen');
+
   const activeLinkHandler = (determiningValue: string): void => {
     linkElementsArr.forEach((linkElements, i) => {
-      let activeLinkFound = false;
-
       for (const linkEl of linkElements) {
         let activeToggleEl: HTMLAnchorElement | HTMLDivElement = linkEl;
         if (i === 0) activeToggleEl = linkEl.querySelector('div')!;
 
         activeToggleEl.classList.remove('active');
 
-        if (linkEl.hash === determiningValue) {
+        if (linkEl.hash === determiningValue)
           activeToggleEl.classList.add('active');
-          activeLinkFound = true;
-        }
       }
-
-      let homeEl: HTMLAnchorElement | HTMLDivElement = linkElements[0];
-      if (i === 0) homeEl = linkElements[0].querySelector('div')!;
-
-      if (!activeLinkFound) homeEl.classList.add('active');
     });
   };
 
-  activeLinkHandler(window.location.hash);
-  window.addEventListener('hashchange', () =>
-    activeLinkHandler(window.location.hash)
-  );
-
-  // For Hamburger Click Functionality
-  const hamburgerBtnEl = document.getElementById('hamburger-btn')!;
-  const navEl = document.getElementById('nav')!;
-  const backdropEl = document.getElementById('backdrop')!;
-
-  const drawerFunctionalityHandler = (): void => {
-    hamburgerBtnEl.classList.toggle('active');
-    navEl.classList.toggle('visible');
-    backdropEl.classList.toggle('visible');
-  };
-
-  hamburgerBtnEl.addEventListener('click', drawerFunctionalityHandler);
-
-  // Close Drawer when clicked
-  backdropEl.addEventListener('click', drawerFunctionalityHandler);
-
-  // Change the active nav when scroll
-  const sectionElements = document.querySelectorAll('section.screen');
-
+  // Intersection Observer to observe all section elements
   const obsOptions = {
     root: null,
     rootMargin: '-35% 0px -60% 0px',
@@ -111,4 +81,20 @@ const navTitles = ['home', 'skills', 'projects', /* 'about', */ 'contact'];
   sectionElements.forEach(sectionEl => {
     observer.observe(sectionEl);
   });
+
+  // For Hamburger Click Functionality
+  const hamburgerBtnEl = document.getElementById('hamburger-btn')!;
+  const navEl = document.getElementById('nav')!;
+  const backdropEl = document.getElementById('backdrop')!;
+
+  const drawerFunctionalityHandler = (): void => {
+    hamburgerBtnEl.classList.toggle('active');
+    navEl.classList.toggle('visible');
+    backdropEl.classList.toggle('visible');
+  };
+
+  hamburgerBtnEl.addEventListener('click', drawerFunctionalityHandler);
+
+  // Close Drawer when clicked
+  backdropEl.addEventListener('click', drawerFunctionalityHandler);
 </script>
