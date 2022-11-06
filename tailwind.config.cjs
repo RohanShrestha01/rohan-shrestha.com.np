@@ -10,13 +10,17 @@ module.exports = {
     extend: {
       screens: {
         xs: '425px',
+        '1.5xl': '1400px',
       },
       colors: {
         primary: '#2f3140',
         'primary-dark': '#272936',
       },
       boxShadow: {
-        drawer: '-10px 0px 30px -15px rgba(23,24,32,0.7)',
+        l: '-5px 0px 20px -3px rgba(23,24,32,0.7)',
+        b: '0px 5px 20px -3px rgba(23,24,32,0.7)',
+        bl: '-5px 5px 20px -3px rgba(23,24,32,0.7)',
+        br: '5px 5px 20px -3px rgba(23,24,32,0.7)',
       },
     },
   },

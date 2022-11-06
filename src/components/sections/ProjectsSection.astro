@@ -14,29 +14,37 @@ import projects from '../../data/portfolio';
             i % 2 !== 0 ? 'text-end flex-row-reverse' : ''
           } items-center`}
         >
-          <div class="z-10 basis-5/12">
+          <div class="1.5xl:basis-5/12 z-10 lg:basis-3/12 xl:basis-4/12">
             <h2 class="mb-0.5 text-xs font-medium">PROJECT #{i + 1}</h2>
             <h1 class="text-lg font-semibold uppercase">{project.title}</h1>
-            <p
-              class={`${
-                i % 2 === 0 ? '-mr-20' : '-ml-20'
-              } bg-primary-dark my-5 rounded px-6 py-4`}
-            >
-              {project.description}
-            </p>
-            <ul
-              class={`flex flex-wrap ${
-                i % 2 !== 0 ? 'justify-end' : ''
-              } gap-4 text-sm`}
-            >
-              {project.languages.map(language => (
-                <li class="bg-primary-dark rounded-full px-4 py-2">
-                  {language}
-                </li>
-              ))}
-            </ul>
             <div
-              class={`${i % 2 !== 0 ? 'mr-2 justify-end' : 'ml-2'} mt-8 flex
+              class={`${
+                i % 2 === 0
+                  ? '1.5xl:-mr-24 lg:-mr-64 xl:-mr-60 2xl:-mr-20'
+                  : '1.5xl:-ml-24 lg:-ml-64 xl:-ml-60 2xl:-ml-20'
+              }`}
+            >
+              <p
+                class={`${
+                  i % 2 === 0 ? 'shadow-bl ' : 'shadow-br'
+                } bg-primary-dark my-5 rounded px-6 py-4 lg:text-[15px] 2xl:text-base`}
+              >
+                {project.description}
+              </p>
+              <ul
+                class={`flex flex-wrap ${
+                  i % 2 !== 0 ? 'justify-end' : ''
+                } gap-4 text-sm`}
+              >
+                {project.languages.map(language => (
+                  <li class="bg-primary-dark shadow-b rounded-full px-4 py-2">
+                    {language}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div
+              class={`${i % 2 === 0 ? 'ml-2' : 'mr-2 justify-end'} mt-8 flex
               gap-4`}
             >
               <a href={project.githubLink} target="_blank">
@@ -47,9 +55,14 @@ import projects from '../../data/portfolio';
               </a>
             </div>
           </div>
-          <div class="basis-7/12">
-            <a href={project.websiteLink}>
-              <img src={project.imageLink} class="rounded" />
+          <div class="1.5xl:basis-7/12 lg:basis-9/12 xl:basis-8/12">
+            <a href={project.websiteLink} target="_blank">
+              <img
+                src={project.imageLink}
+                class={`${
+                  i % 2 === 0 ? 'shadow-br' : 'shadow-bl'
+                } rounded transition-all duration-300 hover:scale-105 hover:brightness-100 lg:brightness-90`}
+              />
             </a>
           </div>
         </li>
