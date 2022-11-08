@@ -1,0 +1,38 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import { Icon } from 'astro-icon';
+---
+
+<SectionLayout heading="Contact" id="contact" text="Feel free to email me">
+  <div class="mt-8 flex items-center">
+    <form class="flex flex-col gap-4 grow lg:basis-3/5">
+      <input type="text" placeholder="Your Name" name="name" class="input" />
+      <input
+        type="email"
+        placeholder="Your Email"
+        name="email"
+        required
+        class="input"
+      />
+      <textarea
+        placeholder="Write a Message"
+        name="message"
+        rows="7"
+        class="input min-h-[200px]"></textarea>
+      <button class="btn-primary self-start mt-4 ml-2">Submit</button>
+    </form>
+    <div
+      class="hidden h-40 border-l-2 ml-16 mb-[74px] pl-12 lg:flex lg:flex-col lg:justify-center lg:gap-6 lg:basis-2/5"
+    >
+      <h2 class="flex gap-4 items-center">
+        <Icon name="clarity:email-solid" class="h-8 w-8" /><span>
+          shrestharohan039@gmail.com
+        </span>
+      </h2>
+      <h2 class="flex gap-4 items-center">
+        <Icon name="carbon:location-filled" class="h-8 w-8" />
+        <span> Lalitpur, Nepal</span>
+      </h2>
+    </div>
+  </div>
+</SectionLayout>
