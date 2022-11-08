@@ -20,7 +20,7 @@ export default [
   {
     title: 'Portfolio Site',
     description:
-      'My Personal Website built with Astro for fast website, server-side rendering (SSR) and good developer experience (DX) and Tailwind for styling.',
+      'My Personal Website built with Astro for fast website and good developer experience (DX) and Tailwind for styling.',
     languages: ['Astro', 'Tailwind', 'TypeScript'],
     githubLink: 'https://github.com/RohanShrestha01/rohanshrestha.dev',
     websiteLink: 'https://rohanshrestha.dev',

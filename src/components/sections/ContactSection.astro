@@ -5,7 +5,11 @@ import { Icon } from 'astro-icon';
 
 <SectionLayout heading="Contact" id="contact" text="Feel free to email me">
   <div class="mt-8 flex items-center">
-    <form class="flex flex-col gap-4 grow lg:basis-3/5">
+    <form
+      class="flex flex-col gap-4 grow lg:basis-3/5"
+      method="POST"
+      data-netlify="true"
+    >
       <input type="text" placeholder="Your Name" name="name" class="input" />
       <input
         type="email"
@@ -18,7 +22,8 @@ import { Icon } from 'astro-icon';
         placeholder="Write a Message"
         name="message"
         rows="7"
-        class="input min-h-[200px]"></textarea>
+        class="input min-h-[200px]"
+        required></textarea>
       <button class="btn-primary self-start mt-4 ml-2">Submit</button>
     </form>
     <div
