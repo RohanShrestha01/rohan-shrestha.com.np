@@ -3,12 +3,13 @@ import SectionLayout from '../../layouts/SectionLayout.astro';
 import { Icon } from 'astro-icon';
 ---
 
-<SectionLayout heading="Contact" id="contact" text="Feel free to email me">
+<SectionLayout heading="Contact" id="contact" text="Feel free to message me">
   <div class="mt-8 flex items-center">
     <form
       class="flex flex-col gap-4 grow lg:basis-3/5"
       method="POST"
       data-netlify="true"
+      name="contact"
     >
       <input type="text" placeholder="Your Name" name="name" class="input" />
       <input
@@ -24,7 +25,10 @@ import { Icon } from 'astro-icon';
         rows="7"
         class="input min-h-[200px]"
         required></textarea>
-      <button class="btn-primary self-start mt-4 ml-2">Submit</button>
+      <button class="btn-primary self-start mt-4 ml-2 flex gap-3 items-center">
+        <Icon name="bi:send" class="h-5" />
+        Send Message</button
+      >
     </form>
     <div
       class="hidden h-40 border-l-2 ml-16 mb-[74px] pl-12 lg:flex lg:flex-col lg:justify-center lg:gap-6 lg:basis-2/5"

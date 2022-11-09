@@ -31,7 +31,7 @@ const {
     <title>{siteTitle}</title>
   </head>
   <body class="bg-primary text-gray-100">
-    <Header />
+    <Header client:load />
     <SideLayout classes="gap-6 left-5 lg:left-10"><SocialLinks /></SideLayout>
     <SideLayout classes="gap-4 right-5 lg:right-10"><SideNav /></SideLayout>
     <slot />
