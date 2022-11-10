@@ -1,0 +1,91 @@
+{
+  "siteTitle": "Rohan Shrestha",
+  "description": "Portfolio site of Rohan Shrestha, Full Stack Developer",
+  "email": "shrestharohan039@gmail.com",
+  "address": "Lalitpur, Nepal",
+  "nav": [
+    { "link": "#home", "name": "home" },
+    { "link": "#skills", "name": "skills" },
+    { "link": "#projects", "name": "projects" },
+    { "link": "#contact", "name": "contact" }
+  ],
+  "socials": [
+    {
+      "icon": "clarity:email-line",
+      "link": "mailto: shrestharohan039@gmail.com"
+    },
+    { "icon": "iconoir:github", "link": "https://github.com/RohanShrestha01" },
+    {
+      "icon": "simple-line-icons:social-linkedin",
+      "link": "https://www.linkedin.com/in/shrestharohan/"
+    },
+    {
+      "icon": "simple-line-icons:social-twitter",
+      "link": "https://twitter.com/CresthaRohan039"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Frontend",
+      "list": [
+        { "icon": "vscode-icons:file-type-html", "language": "HTML5" },
+        { "icon": "vscode-icons:file-type-css", "language": "CSS3" },
+        { "icon": "logos:javascript", "language": "JavaScript" },
+        { "icon": "logos:typescript-icon", "language": "TypeScript" },
+        { "icon": "logos:react", "language": "ReactJS" },
+        { "icon": "astro", "language": "Astro" }
+      ]
+    },
+    {
+      "title": "Backend",
+      "list": [
+        { "icon": "logos:nodejs-icon", "language": "NodeJS" },
+        { "icon": "express", "language": "Express" },
+        { "icon": "logos:mysql-icon", "language": "MySQL" }
+      ]
+    },
+    {
+      "title": "Other Libraries",
+      "list": [
+        { "icon": "logos:tailwindcss-icon", "language": "Tailwind" },
+        { "icon": "logos:sass", "language": "SASS" },
+        { "icon": "logos:material-ui", "language": "Material UI" },
+        { "icon": "react-query", "language": "React Query" },
+        { "icon": "logos:redux", "language": "Redux" },
+        { "icon": "logos:react-router", "language": "React Router" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Sudoku",
+      "description": "A sudoku puzzle game with different difficulty, game modes (Timer, Countdown and Hints) and functionalities like pausing timer, marking incorrect numbers red, resetting board, showing solution etc.",
+      "languages": ["HTML5", "CSS3", "JavaScript", "API"],
+      "githubLink": "https://github.com/RohanShrestha01/sudoku",
+      "websiteLink": "https://websudoku.netlify.app/",
+      "imageLink": "/sudoku.webp"
+    },
+    {
+      "title": "Firestore",
+      "description": "A Game Store built using RAWG API for games data, ITAD API for prices of those games and Stripe for payments. Some of the features implemented are Skeleton Screens when loading data, Infinite Scrolling, Paginated Results etc.",
+      "languages": [
+        "React",
+        "Redux",
+        "React Query",
+        "Material UI",
+        "ExpressJS"
+      ],
+      "githubLink": "https://github.com/RohanShrestha01/firestore-react",
+      "websiteLink": "https://firestore-react-1aabd.web.app/",
+      "imageLink": "/firestore.webp"
+    },
+    {
+      "title": "Portfolio Site",
+      "description": "My Personal Website built with Astro for fast website and good developer experience (DX) and Tailwind for styling.",
+      "languages": ["Astro", "Tailwind", "TypeScript"],
+      "githubLink": "https://github.com/RohanShrestha01/rohanshrestha.dev",
+      "websiteLink": "https://rohanshrestha.dev",
+      "imageLink": "/portfolio-site.webp"
+    }
+  ]
+}

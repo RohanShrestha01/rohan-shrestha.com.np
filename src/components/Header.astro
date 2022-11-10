@@ -15,11 +15,14 @@ import Nav from './Nav.astro';
   </span>
   <Nav />
   <span class="hidden lg:inline-block lg:flex-1 lg:text-right">
-    <a href="/resume.pdf" target="_blank" class="btn-primary">RESUME</a>
+    <a href="/resume.pdf" target="_blank" class="btn-primary inline-block"
+      >RESUME</a
+    >
   </span>
   <button
     class="flex flex-col gap-1.5 relative z-50 md:hidden"
     id="hamburger-btn"
+    aria-label="Open the menu"
   >
     {
       [...Array(3)].map(() => (

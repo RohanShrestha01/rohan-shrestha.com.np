@@ -1,6 +1,6 @@
 ---
 import SocialLinks from './SocialLinks.astro';
-const navTitles = ['home', 'skills', 'projects', /* 'about', */ 'contact'];
+import { nav } from '../data/site.json';
 ---
 
 <nav
@@ -9,10 +9,10 @@ const navTitles = ['home', 'skills', 'projects', /* 'about', */ 'contact'];
 >
   <ul class="flex flex-col gap-9 md:flex-row md:gap-10">
     {
-      navTitles.map(title => (
+      nav.map(({ link, name }) => (
         <li class="cursor-pointer text-center">
-          <a href={'#' + title} class="nav__link py-1 uppercase hover:border-b">
-            {title}
+          <a href={link} class="nav__link py-1 uppercase hover:border-b">
+            {name}
           </a>
         </li>
       ))

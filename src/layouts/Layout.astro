@@ -3,16 +3,7 @@ import SideLayout from './SideLayout.astro';
 import Header from '../components/Header.astro';
 import SideNav from '../components/SideNav.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-
-export interface Props {
-  siteTitle?: string;
-  description?: string;
-}
-
-const {
-  siteTitle = 'Rohan Shrestha',
-  description = 'The personal site of Rohan Shrestha...',
-} = Astro.props as Props;
+import { siteTitle, description } from '../data/site.json';
 ---
 
 <html lang="en" class="dark scroll-smooth">
@@ -25,13 +16,13 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <title>{siteTitle}</title>
   </head>
   <body class="bg-primary text-gray-100">
-    <Header client:load />
+    <Header />
     <SideLayout classes="gap-6 left-5 lg:left-10"><SocialLinks /></SideLayout>
     <SideLayout classes="gap-4 right-5 lg:right-10"><SideNav /></SideLayout>
     <slot />

@@ -1,6 +1,7 @@
 ---
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import { Icon } from 'astro-icon';
+import { email, address } from '../../data/site.json';
 ---
 
 <SectionLayout heading="Contact" id="contact" text="Feel free to message me">
@@ -35,12 +36,12 @@ import { Icon } from 'astro-icon';
     >
       <h2 class="flex gap-4 items-center">
         <Icon name="clarity:email-solid" class="h-8 w-8" /><span>
-          shrestharohan039@gmail.com
+          {email}
         </span>
       </h2>
       <h2 class="flex gap-4 items-center">
         <Icon name="carbon:location-filled" class="h-8 w-8" />
-        <span> Lalitpur, Nepal</span>
+        <span>{address}</span>
       </h2>
     </div>
   </div>

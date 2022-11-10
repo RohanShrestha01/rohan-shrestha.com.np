@@ -2,7 +2,7 @@
 import Icon from 'astro-icon';
 import SectionLayout from '../../layouts/SectionLayout.astro';
 
-import projects from '../../data/portfolio';
+import { projects } from '../../data/site.json';
 ---
 
 <SectionLayout heading="Projects" id="projects" text="Some things I've built">
@@ -47,10 +47,18 @@ import projects from '../../data/portfolio';
               class={`${i % 2 !== 0 && 'lg:mr-2 lg:justify-end'} mt-3 flex gap-4
               lg:mt-8 lg:ml-2`}
             >
-              <a href={project.githubLink} target="_blank">
+              <a
+                href={project.githubLink}
+                target="_blank"
+                aria-label="View github repo"
+              >
                 <Icon name="iconoir:github" class="h-6" />
               </a>
-              <a href={project.websiteLink} target="_blank">
+              <a
+                href={project.websiteLink}
+                target="_blank"
+                aria-label="View project live"
+              >
                 <Icon name="heroicons-outline:external-link" class="h-6" />
               </a>
             </div>
@@ -61,7 +69,8 @@ import projects from '../../data/portfolio';
                 src={project.imageLink}
                 class={`${
                   i % 2 === 0 ? 'lg:shadow-br' : 'lg:shadow-bl'
-                } rounded-t-md lg:rounded lg:brightness-90 lg:transition-all lg:duration-300 lg:hover:scale-105 lg:hover:brightness-100`}
+                } h-full w-full rounded-t-md lg:rounded lg:brightness-90 lg:transition-all lg:duration-300 lg:hover:scale-105 lg:hover:brightness-100`}
+                alt={project.title + ' Project'}
               />
             </a>
           </div>

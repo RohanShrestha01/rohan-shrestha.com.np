@@ -1,14 +1,14 @@
 ---
-const navLinks = ['#home', '#skills', '#projects', /* '#about', */ '#contact'];
+import { nav } from '../data/site.json';
 ---
 
 <ul class="flex flex-col gap-4">
   {
-    navLinks.map(link => (
+    nav.map(({ link, name }) => (
       <li>
         <a href={link} class="circle__link group relative">
           <span class="invisible absolute right-[200%] scale-0 text-xs uppercase transition-all group-hover:visible group-hover:scale-100">
-            {link.slice(1)}
+            {name}
           </span>
           <div
             class={`h-3.5 w-3.5 cursor-pointer rounded-full border transition-transform group-hover:scale-125`}

@@ -1,20 +1,14 @@
 ---
 import { Icon } from 'astro-icon';
-
-const icons = [
-  { name: 'clarity:email-line', href: 'mailto: shrestharohan039@gmail.com' },
-  { name: 'iconoir:github', href: 'https://github.com/RohanShrestha01' },
-  { name: 'simple-line-icons:social-linkedin', href: '' },
-  { name: 'simple-line-icons:social-twitter', href: '' },
-];
+import { socials } from '../data/site.json';
 ---
 
 <ul class="flex gap-6 xs:gap-8 md:flex-col md:gap-6">
   {
-    icons.map(icon => (
+    socials.map(social => (
       <li>
-        <a href={icon.href} target="_blank">
-          <Icon name={icon.name} class="h-6 cursor-pointer" />
+        <a href={social.link} target="_blank">
+          <Icon name={social.icon} class="h-6 cursor-pointer" />
         </a>
       </li>
     ))
