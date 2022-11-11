@@ -10,11 +10,14 @@ import Nav from './Nav.astro';
     class="invisible h-screen w-screen fixed inset-0 opacity-0 transition-all duration-500 z-30 backdrop-blur-sm bg-[rgba(0,0,0,0.4)]"
   >
   </div>
-  <span class="font-cursive text-2xl md:flex-1 md:text-3xl"
+  <span class="font-cursive text-2xl md:flex-1 md:text-3xl" id="logo"
     ><a href="/">Rohan Shrestha</a>
   </span>
   <Nav />
-  <span class="hidden lg:inline-block lg:flex-1 lg:text-right">
+  <span
+    class="hidden lg:inline-block lg:flex-1 lg:text-right"
+    id="header__resume-btn"
+  >
     <a href="/resume.pdf" target="_blank" class="btn-primary inline-block"
       >RESUME</a
     >
@@ -56,24 +59,6 @@ import Nav from './Nav.astro';
 </style>
 
 <script>
-  // To hide header when user scrolls down and show when the user scrolls up
-  const headerEl = document.querySelector('header')!;
-  const headerBottom = headerEl.offsetTop + headerEl.offsetHeight;
-  let prevScrollPos = window.scrollY;
-
-  const scrollHandler = () => {
-    const currentScrollPos = window.scrollY;
-    if (prevScrollPos > currentScrollPos || currentScrollPos < headerBottom)
-      headerEl.style.top = '0';
-    else headerEl.style.top = `-${headerBottom}px`;
-
-    // To change styling of header when it is displayed on scroll
-    if (currentScrollPos > headerBottom)
-      headerEl.classList.add('scroll-header');
-    else headerEl.classList.remove('scroll-header');
-
-    prevScrollPos = currentScrollPos;
-  };
-
-  window.addEventListener('scroll', scrollHandler);
+  import '../scripts/header';
+  import '../scripts/hamburgerMenu';
 </script>

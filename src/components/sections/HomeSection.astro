@@ -1,19 +1,30 @@
+---
+const introduction = "Hi! I'm Rohan 👋";
+const title = 'I am a Full-Stack Web Developer.';
+const description =
+  "Currently I'm working on different personal projects and looking for new opportunities to expand my understanding of web design and development.";
+---
+
 <section
   id="home"
   class="screen h-screen flex flex-col justify-center gap-3 max-w-[550px] lg:max-w-2xl"
 >
-  <span class="text-lg font-medium xl:text-xl">Hi! I'm Rohan 👋</span>
-  <h1 class="text-3xl font-bold xl:text-4xl">
-    I am a <span>Full-Stack Web Developer.</span>
+  <span class="text-lg font-medium xl:text-xl home__reveal">{introduction}</span
+  >
+  <h1 class="text-3xl font-bold xl:text-4xl home__reveal">
+    {title}
   </h1>
-  <p class="mt-4 mb-10 xl:text-lg">
-    Currently I'm working on different personal projects and looking for new
-    opportunities to expand my understanding of web design and development.
+  <p class="mt-4 mb-10 xl:text-lg home__reveal">
+    {description}
   </p>
   <div class="flex flex-col gap-4 self-start xs:flex-row xs:gap-7">
-    <a href="#projects" class="btn-primary xl:text-lg">View Projects</a>
-    <a href="/resume.pdf" class="btn-primary xl:text-lg" target="_blank"
-      >Resume</a
+    <a href="#projects" class="btn-primary xl:text-lg home__reveal"
+      >View Projects</a
+    >
+    <a
+      href="/resume.pdf"
+      class="btn-primary xl:text-lg home__reveal"
+      target="_blank">Resume</a
     >
   </div>
 </section>
