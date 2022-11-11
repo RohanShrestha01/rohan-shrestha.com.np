@@ -31,6 +31,8 @@ document.querySelectorAll('body > aside').forEach((el, i) => {
   });
 });
 
+ScrollReveal().reveal('#hamburger-btn', { origin: 'top', delay: 100 });
+
 // animation for home section elements
 homeSectionElements.forEach((el, i) => {
   ScrollReveal().reveal(el, { delay: (i + 1) * 50 });

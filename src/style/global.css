@@ -12,6 +12,16 @@
   }
 }
 
+/* To Prevent flickering i.e to hide the elements before the animation code executes */
+html.sr #logo,
+html.sr #nav li,
+html.sr #header__resume-btn,
+html.sr #hamburger-btn,
+html.sr body > aside,
+html.sr .screen {
+  visibility: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 0.8rem;
 }
