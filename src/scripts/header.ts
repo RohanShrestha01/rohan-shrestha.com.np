@@ -1,38 +1,36 @@
-// To hide header when user scrolls down and show when the user scrolls up
 const headerEl = document.querySelector('header')!;
 const headerBottom = headerEl.offsetTop + headerEl.offsetHeight;
 
-let timeoutScroll: NodeJS.Timeout; // holder for timeout id
-let scrollThrottle = false;
 let prevScrollPos = window.scrollY;
+let prevScrollDir: 'up' | 'down' | null = null;
+let hasClass = false;
 
 const scrollHandler = () => {
   const currentScrollPos = window.scrollY;
-  if (prevScrollPos > currentScrollPos || currentScrollPos < headerBottom)
-    headerEl.style.transform = 'translateY(0)';
-  else headerEl.style.transform = `translateY(-${headerBottom}px)`;
-
-  // To change styling of header when it is displayed on scroll
-  if (currentScrollPos > headerBottom) headerEl.classList.add('scroll-header');
-  else headerEl.classList.remove('scroll-header');
+  const currentScrollDir = currentScrollPos > prevScrollPos ? 'down' : 'up';
 
   prevScrollPos = currentScrollPos;
+
+  // To change styling of header when it is displayed on scroll
+  if (currentScrollPos > headerBottom && !hasClass) {
+    headerEl.classList.add('scroll-header');
+    hasClass = true;
+  } else if (currentScrollPos < headerBottom && hasClass) {
+    headerEl.classList.remove('scroll-header');
+    hasClass = false;
+  }
+
+  // stop the funciton execution if scrolling in same direction
+  if (currentScrollDir === prevScrollDir) return;
+
+  // To hide header when user scrolls down and show when the user scrolls up
+  if (currentScrollDir === 'down')
+    headerEl.style.transform = `translateY(-${headerBottom}px)`;
+  else headerEl.style.transform = 'translateY(0)';
+
+  prevScrollDir = currentScrollDir;
 };
 
-window.addEventListener('scroll', () => {
-  // Only run if not throttled
-  if (!scrollThrottle) {
-    scrollHandler();
-    scrollThrottle = true;
-    // Set a timeout to un-throttle
-    setTimeout(() => {
-      scrollThrottle = false;
-    }, 400);
-  } else {
-    // debouncing, only when throttled
-    clearTimeout(timeoutScroll);
-    timeoutScroll = setTimeout(scrollHandler, 50);
-  }
-});
+window.addEventListener('scroll', scrollHandler);
 
 export {};
