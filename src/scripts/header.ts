@@ -1,5 +1,4 @@
 const headerEl = document.querySelector('header')!;
-const headerBottom = headerEl.offsetTop + headerEl.offsetHeight;
 
 let prevScrollPos = window.scrollY;
 let prevScrollDir: 'up' | 'down' | null = null;
@@ -8,6 +7,7 @@ let hasClass = false;
 const scrollHandler = () => {
   const currentScrollPos = window.scrollY;
   const currentScrollDir = currentScrollPos > prevScrollPos ? 'down' : 'up';
+  const headerBottom = headerEl.offsetTop + headerEl.offsetHeight;
 
   prevScrollPos = currentScrollPos;
 
