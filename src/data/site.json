@@ -33,7 +33,8 @@
         { "icon": "logos:javascript", "language": "JavaScript" },
         { "icon": "logos:typescript-icon", "language": "TypeScript" },
         { "icon": "logos:react", "language": "ReactJS" },
-        { "icon": "astro", "language": "Astro" }
+        { "icon": "astro", "language": "Astro" },
+        { "icon": "logos:nextjs-icon", "language": "NextJS" }
       ]
     },
     {
@@ -41,7 +42,8 @@
       "list": [
         { "icon": "logos:nodejs-icon", "language": "NodeJS" },
         { "icon": "express", "language": "Express" },
-        { "icon": "logos:mysql-icon", "language": "MySQL" }
+        { "icon": "logos:mysql-icon", "language": "MySQL" },
+        { "icon": "logos:prisma", "language": "Prisma" }
       ]
     },
     {
@@ -86,6 +88,21 @@
       "githubLink": "https://github.com/RohanShrestha01/rohanshrestha.dev",
       "websiteLink": "https://rohanshrestha.dev",
       "imageLink": "/portfolio-site.webp"
+    },
+    {
+      "title": "Task Planner",
+      "description": "A task planner app with Kanban Board, Calendar View, CRUD functionality, search, sorting and ordering, dark and light mode, lottie animations, authentication using NextAuth and database using Prisma, PlanetScale(hosting) and MySQL.",
+      "languages": [
+        "NextJS",
+        "Prisma",
+        "NextAuth",
+        "TypeScript",
+        "Tailwind",
+        "TanStack Query"
+      ],
+      "githubLink": "https://github.com/RohanShrestha01/task-planner",
+      "websiteLink": "https://taskplanner01.vercel.app",
+      "imageLink": "/task-planner.webp"
     }
   ]
 }
