@@ -37,6 +37,7 @@ ScrollReveal().reveal('#hamburger-btn', { origin: 'top', delay: 100 });
 homeSectionElements.forEach((el, i) => {
   ScrollReveal().reveal(el, { delay: (i + 1) * 50 });
 });
+ScrollReveal().reveal('#developer-lottie', { origin: 'right', delay: 300 });
 
 // animation for titles not present in home section
 ScrollReveal().reveal('.screen:not(#home) > *:not(article), #skills h2', {

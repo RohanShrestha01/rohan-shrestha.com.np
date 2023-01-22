@@ -1,30 +1,47 @@
 ---
 const introduction = "Hi! I'm Rohan 👋";
-const title = 'I am a Full-Stack Web Developer.';
+const title = 'I am a Full-Stack Web Developer';
 const description =
   "Currently I'm working on different personal projects that push the boundaries of my skillset and expand my understanding of web development and design.";
 ---
 
-<section
-  id="home"
-  class="screen flex h-screen max-w-[550px] flex-col justify-center gap-3 lg:max-w-2xl"
->
-  <span class="home__reveal text-lg font-medium xl:text-xl">{introduction}</span
-  >
-  <h1 class="home__reveal text-3xl font-bold xl:text-4xl">
-    {title}
-  </h1>
-  <p class="home__reveal mt-4 mb-10 xl:text-lg">
-    {description}
-  </p>
-  <div class="flex flex-col gap-4 self-start xs:flex-row xs:gap-7">
-    <a href="#projects" class="home__reveal btn-primary text-center xl:text-lg"
-      >View Projects</a
+<section id="home" class="screen flex h-screen items-center">
+  <div class="flex max-w-[550px] flex-col gap-3 lg:max-w-2xl">
+    <span class="home__reveal text-lg font-medium xl:text-xl"
+      >{introduction}</span
     >
-    <a
-      href="/resume.pdf"
-      class="home__reveal btn-primary text-center xl:text-lg"
-      target="_blank">Resume</a
-    >
+    <h1 class="home__reveal text-3xl font-bold xl:text-4xl">
+      {title}
+    </h1>
+    <p class="home__reveal mt-4 mb-10 xl:text-lg">
+      {description}
+    </p>
+    <div class="flex flex-col gap-4 self-start xs:flex-row xs:gap-7">
+      <a
+        href="#projects"
+        class="home__reveal btn-primary text-center xl:text-lg">View Projects</a
+      >
+      <a
+        href="/resume.pdf"
+        class="home__reveal btn-primary text-center xl:text-lg"
+        target="_blank">Resume</a
+      >
+    </div>
   </div>
+  <div id="developer-lottie" class="mb-7 max-w-[545px]"></div>
 </section>
+
+<script>
+  import lottie from 'lottie-web';
+  import animationData from '../../lotties/developer.json';
+
+  const lottieContainer = document.getElementById('developer-lottie')!;
+
+  lottie.loadAnimation({
+    container: lottieContainer,
+    animationData,
+    autoplay: true,
+    loop: true,
+    renderer: 'svg',
+  });
+</script>
