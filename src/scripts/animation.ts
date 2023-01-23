@@ -41,6 +41,7 @@ homeSectionElements.forEach((el, i) => {
 //animation for lottie files
 ScrollReveal().reveal('#developer-lottie', { origin: 'right', delay: 300 });
 ScrollReveal().reveal('#background-lottie', { origin: 'right' });
+ScrollReveal().reveal('#astronaut-laptop-lottie', { origin: 'right' });
 
 // animation for titles not present in home section
 ScrollReveal().reveal('.screen:not(#home) > *:not(article), #skills h2', {

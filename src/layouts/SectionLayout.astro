@@ -8,11 +8,17 @@ interface Props {
 const { id, heading, text } = Astro.props;
 ---
 
-<section id={id} class="screen py-16">
+<section id={id} class="screen relative py-16">
   <h1 class="text-3xl font-bold">{heading}</h1>
-  <div class="rounded-full border-t-4 w-14 mt-1.5"></div>
+  <div class="mt-1.5 w-14 rounded-full border-t-4"></div>
   <p class="mt-4">{text}</p>
   <article>
     <slot />
   </article>
 </section>
+
+<style>
+  #projects {
+    padding-top: 108px;
+  }
+</style>

@@ -6,12 +6,14 @@ import { projects } from '../../data/site.json';
 ---
 
 <SectionLayout heading="Projects" id="projects" text="Some things I've built">
-  <ul class="mt-10 flex flex-wrap gap-10 justify-center lg:mt-14 lg:block">
+  <div id="astronaut-laptop-lottie" class="absolute top-7 left-1/4 w-[250px]">
+  </div>
+  <ul class="mt-10 flex flex-wrap justify-center gap-10 lg:mt-36 lg:block">
     {
       projects.map((project, i) => (
         <li
           class={`${i !== 0 && 'lg:mt-28'} flex ${
-            i % 2 === 0 ? 'lg:flex-row' : 'lg:text-end lg:flex-row-reverse'
+            i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse lg:text-end'
           } bg-primary-dark shadow-b max-w-xs flex-col-reverse justify-end rounded-b-md lg:max-w-none lg:items-center lg:justify-start lg:rounded-none lg:bg-transparent lg:shadow-none`}
         >
           <div class="1.5xl:basis-5/12 z-10 px-6 py-5 lg:basis-3/12 lg:p-0 xl:basis-4/12">
@@ -79,3 +81,20 @@ import { projects } from '../../data/site.json';
     }
   </ul>
 </SectionLayout>
+
+<script>
+  import lottie from 'lottie-web';
+  import animationData from '../../lotties/astronaut-laptop.json';
+
+  const astronautLaptopLottieContainer = document.getElementById(
+    'astronaut-laptop-lottie'
+  )!;
+
+  lottie.loadAnimation({
+    container: astronautLaptopLottieContainer,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData,
+  });
+</script>
