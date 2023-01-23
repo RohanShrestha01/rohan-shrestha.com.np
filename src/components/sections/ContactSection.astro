@@ -5,9 +5,10 @@ import { email, address } from '../../data/site.json';
 ---
 
 <SectionLayout heading="Contact" id="contact" text="Feel free to message me">
-  <div class="mt-8 flex items-center">
+  <div id="message-lottie" class="absolute top-9 left-1/4 w-[250px]"></div>
+  <div class="mt-16 flex items-center">
     <form
-      class="flex flex-col gap-4 grow lg:basis-3/5"
+      class="flex grow flex-col gap-4 lg:basis-3/5"
       method="POST"
       data-netlify="true"
       name="contact"
@@ -26,23 +27,38 @@ import { email, address } from '../../data/site.json';
         rows="7"
         class="input min-h-[200px]"
         required></textarea>
-      <button class="btn-primary self-start mt-4 ml-2 flex gap-3 items-center">
+      <button class="btn-primary mt-4 ml-2 flex items-center gap-3 self-start">
         <Icon name="bi:send" class="h-5" />
         Send Message</button
       >
     </form>
     <div
-      class="hidden h-40 border-l-2 ml-16 mb-[74px] pl-12 lg:flex lg:flex-col lg:justify-center lg:gap-6 lg:basis-2/5"
+      class="ml-16 mb-[74px] hidden h-40 border-l-2 pl-12 lg:flex lg:basis-2/5 lg:flex-col lg:justify-center lg:gap-6"
     >
-      <h2 class="flex gap-4 items-center">
+      <h2 class="flex items-center gap-4">
         <Icon name="clarity:email-solid" class="h-8 w-8" /><span>
           {email}
         </span>
       </h2>
-      <h2 class="flex gap-4 items-center">
+      <h2 class="flex items-center gap-4">
         <Icon name="carbon:location-filled" class="h-8 w-8" />
         <span>{address}</span>
       </h2>
     </div>
   </div>
 </SectionLayout>
+
+<script>
+  import lottie from 'lottie-web';
+  import animationData from '../../lotties/message.json';
+
+  const container = document.getElementById('message-lottie')!;
+
+  lottie.loadAnimation({
+    animationData,
+    container,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+  });
+</script>
