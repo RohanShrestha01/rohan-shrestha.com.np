@@ -35,10 +35,10 @@ const description =
   import lottie from 'lottie-web';
   import animationData from '../../lotties/developer.json';
 
-  const lottieContainer = document.getElementById('developer-lottie')!;
+  const container = document.getElementById('developer-lottie')!;
 
   lottie.loadAnimation({
-    container: lottieContainer,
+    container,
     animationData,
     autoplay: true,
     loop: true,
