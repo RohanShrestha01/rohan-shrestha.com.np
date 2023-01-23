@@ -15,5 +15,27 @@ import ContactSection from '../components/sections/ContactSection.astro';
     <SkillsSection />
     <ProjectsSection />
     <ContactSection />
+    <footer class="mt-4 flex items-center justify-center">
+      <div id="astronaut-bye-lottie" class="w-[200px]"></div>
+      <div class="flex flex-col items-center gap-1">
+        <h3 class="text-[15px]">Built with Astro, TypeScript & Tailwind</h3>
+        <span class="text-sm">By Rohan Shrestha</span>
+      </div>
+    </footer>
   </main>
 </Layout>
+
+<script>
+  import lottie from 'lottie-web';
+  import animationData from '../lotties/astronaut-bye.json';
+
+  const container = document.getElementById('astronaut-bye-lottie')!;
+
+  lottie.loadAnimation({
+    container,
+    animationData,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+  });
+</script>

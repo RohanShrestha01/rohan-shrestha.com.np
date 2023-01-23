@@ -37,6 +37,8 @@ ScrollReveal().reveal('#hamburger-btn', { origin: 'top', delay: 100 });
 homeSectionElements.forEach((el, i) => {
   ScrollReveal().reveal(el, { delay: (i + 1) * 50 });
 });
+
+//animation for lottie files
 ScrollReveal().reveal('#developer-lottie', { origin: 'right', delay: 300 });
 
 // animation for titles not present in home section
@@ -54,5 +56,8 @@ skillListElements.forEach(skillListEl => {
 
 // animation for individual project in projects section and contact form
 ScrollReveal().reveal('#projects article > ul > li, #contact article > div');
+
+// animation for footer
+ScrollReveal().reveal('footer', { viewFactor: 0.5 });
 
 export {};
