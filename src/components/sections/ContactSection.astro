@@ -6,8 +6,8 @@ import { email, address } from '../../data/site.json';
 
 <SectionLayout heading="Contact" id="contact" text="Feel free to message me">
   <div
-    id="message-lottie"
-    class="absolute right-0 top-8 -z-10 w-[150px] xs:w-[200px] sm:top-9 sm:w-[250px] lg:left-1/4"
+    id="contact-lottie"
+    class="absolute right-0 top-6 -z-10 w-[150px] xs:-top-5 xs:w-[200px] sm:-top-10 sm:w-[250px] lg:left-1/4"
   >
   </div>
   <div class="mt-8 flex items-center sm:mt-16">
@@ -54,9 +54,9 @@ import { email, address } from '../../data/site.json';
 
 <script>
   import lottie from 'lottie-web';
-  import animationData from '../../lotties/message.json';
+  import animationData from '../../lotties/astronaut-happy.json';
 
-  const container = document.getElementById('message-lottie')!;
+  const container = document.getElementById('contact-lottie')!;
 
   lottie.loadAnimation({
     animationData,
