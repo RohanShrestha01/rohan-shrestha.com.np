@@ -1,5 +1,5 @@
 ---
-const introduction = "Hi! I'm Rohan 👋";
+const introduction = "Hi! I'm Rohan ";
 const title = 'I am a Full-Stack Web Developer';
 const description =
   "Currently I'm working as a Front-End Developer and also building different personal projects that push the boundaries of my skillset and expand my understanding of web development.";
@@ -11,7 +11,10 @@ const description =
 >
   <div class="flex flex-col gap-3 lg:w-[515px] lg:flex-shrink-0 xl:w-[615px]">
     <span class="home__reveal text-lg font-medium xl:text-xl"
-      >{introduction}</span
+      >{introduction}<span
+        class="inline-block origin-[70%_70%] animate-[wave_1.8s_infinite] text-2xl"
+        >👋</span
+      ></span
     >
     <h1 class="home__reveal text-3xl font-bold xl:text-4xl">
       {title}
@@ -37,6 +40,32 @@ const description =
   >
   </div>
 </section>
+
+<style>
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(-10deg);
+    }
+    20% {
+      transform: rotate(12deg);
+    }
+    30% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(9deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+</style>
 
 <script>
   import lottie from 'lottie-web';
