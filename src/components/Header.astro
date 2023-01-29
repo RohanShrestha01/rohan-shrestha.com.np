@@ -3,11 +3,11 @@ import Nav from './Nav.astro';
 ---
 
 <header
-  class="flex items-center fixed top-0 w-screen justify-between z-20 transition-all duration-300 ease-in-out px-5 py-6 xs:px-7 sm:px-10 md:justify-start md:px-7 lg:px-12 lg:py-7"
+  class="fixed top-0 z-20 flex w-screen items-center justify-between px-5 py-6 transition-all duration-300 ease-in-out xs:px-7 sm:px-10 md:justify-start md:px-7 lg:py-7 xl:px-12"
 >
   <div
     id="backdrop"
-    class="invisible h-screen w-screen fixed inset-0 opacity-0 transition-all duration-500 z-30 backdrop-blur-sm bg-[rgba(0,0,0,0.4)]"
+    class="invisible fixed inset-0 z-30 h-screen w-screen bg-[rgba(0,0,0,0.4)] opacity-0 backdrop-blur-sm transition-all duration-500"
   >
   </div>
   <span class="font-cursive text-2xl md:flex-1 md:text-3xl" id="logo"
@@ -23,7 +23,7 @@ import Nav from './Nav.astro';
     >
   </span>
   <button
-    class="flex flex-col gap-1.5 relative z-50 md:hidden"
+    class="relative z-50 flex flex-col gap-1.5 md:hidden"
     id="hamburger-btn"
     aria-label="Open the menu"
   >

@@ -6,9 +6,14 @@ import { projects } from '../../data/site.json';
 ---
 
 <SectionLayout heading="Projects" id="projects" text="Some things I've built">
-  <div id="astronaut-laptop-lottie" class="absolute top-7 left-1/4 w-[250px]">
+  <div
+    id="astronaut-laptop-lottie"
+    class="absolute right-0 top-16 -z-10 w-[150px] xs:top-10 xs:w-[200px] sm:top-0 sm:w-[250px] lg:left-1/4"
+  >
   </div>
-  <ul class="mt-10 flex flex-wrap justify-center gap-10 lg:mt-36 lg:block">
+  <ul
+    class="mt-8 flex flex-wrap justify-center gap-10 xs:mt-16 lg:mt-24 lg:block"
+  >
     {
       projects.map((project, i) => (
         <li

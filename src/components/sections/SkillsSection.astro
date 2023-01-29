@@ -7,7 +7,7 @@ import { skills } from '../../data/site.json';
 <SectionLayout
   id="skills"
   heading="Skills"
-  text="These are the technologies I've worked with"
+  text="Technologies I've worked with"
 >
   <div class="relative">
     {
@@ -27,13 +27,21 @@ import { skills } from '../../data/site.json';
         </div>
       ))
     }
-    <div id="background-lottie" class="absolute right-0 top-0 -z-10 w-[600px]">
+    <div
+      id="background-lottie"
+      class="absolute right-0 top-4 -z-10 hidden w-[500px] lg:block"
+    >
       <div
-        id="astronaut-reading-lottie"
-        class="absolute top-[150px] right-[150px] w-[300px]"
+        id="reading-lottie"
+        class="absolute lg:top-[125px] lg:right-[125px] lg:w-[250px]"
       >
       </div>
     </div>
+  </div>
+  <div
+    id="astronaut-reading-lottie"
+    class="absolute right-0 top-0 -z-10 w-[150px] xs:top-4 xs:w-[200px] sm:-top-2 sm:w-[250px] lg:hidden"
+  >
   </div>
 </SectionLayout>
 
@@ -53,6 +61,7 @@ import { skills } from '../../data/site.json';
   const astronautReadingLottieContainer = document.getElementById(
     'astronaut-reading-lottie'
   )!;
+  const readingLottieContainer = document.getElementById('reading-lottie')!;
 
   lottie.loadAnimation({
     container: backgroundLottieContainer,
@@ -60,6 +69,14 @@ import { skills } from '../../data/site.json';
     loop: true,
     autoplay: true,
     animationData: backgroundAnimation,
+  });
+
+  lottie.loadAnimation({
+    container: readingLottieContainer,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: astronautReadingAnimation,
   });
 
   lottie.loadAnimation({

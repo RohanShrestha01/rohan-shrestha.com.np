@@ -41,7 +41,9 @@ homeSectionElements.forEach((el, i) => {
 //animation for lottie files
 ScrollReveal().reveal('#developer-lottie', { origin: 'right', delay: 300 });
 ScrollReveal().reveal('#background-lottie', { origin: 'right' });
+ScrollReveal().reveal('#astronaut-reading-lottie', { origin: 'right' });
 ScrollReveal().reveal('#astronaut-laptop-lottie', { origin: 'right' });
+ScrollReveal().reveal('#contact-lottie', { origin: 'right' });
 
 // animation for titles not present in home section
 ScrollReveal().reveal('.screen:not(#home) > *:not(article), #skills h2', {
@@ -60,6 +62,6 @@ skillListElements.forEach(skillListEl => {
 ScrollReveal().reveal('#projects article > ul > li, #contact article > div');
 
 // animation for footer
-ScrollReveal().reveal('footer', { viewFactor: 0.5 });
+ScrollReveal().reveal('footer');
 
 export {};
