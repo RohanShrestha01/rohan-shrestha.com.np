@@ -23,23 +23,24 @@ navElements.forEach((navEl, i) => {
   ScrollReveal().reveal(navEl, { origin: 'top', delay: (i + 1) * 50 });
 });
 
-ScrollReveal().reveal('#header__resume-btn', { origin: 'top', delay: 250 });
+ScrollReveal().reveal('#theme-toggle-lottie', { origin: 'top', delay: 250 });
+ScrollReveal().reveal('#header__resume-btn', { origin: 'top', delay: 300 });
 document.querySelectorAll('body > aside').forEach((el, i) => {
   ScrollReveal().reveal(el as HTMLElement, {
     origin: i === 0 ? 'left' : 'right',
-    delay: 300,
+    delay: 350,
   });
 });
 
-ScrollReveal().reveal('#hamburger-btn', { origin: 'top', delay: 100 });
+ScrollReveal().reveal('#hamburger-btn', { origin: 'top', delay: 125 });
 
 // animation for home section elements
 homeSectionElements.forEach((el, i) => {
-  ScrollReveal().reveal(el, { delay: (i + 1) * 50 });
+  ScrollReveal().reveal(el, { delay: (i + 1) * 75 });
 });
 
 //animation for lottie files
-ScrollReveal().reveal('#developer-lottie', { origin: 'right', delay: 300 });
+ScrollReveal().reveal('#developer-lottie', { origin: 'right', delay: 350 });
 ScrollReveal().reveal('#background-lottie', { origin: 'right' });
 ScrollReveal().reveal('#astronaut-reading-lottie', { origin: 'right' });
 ScrollReveal().reveal('#astronaut-laptop-lottie', { origin: 'right' });

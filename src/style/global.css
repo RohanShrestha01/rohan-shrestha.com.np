@@ -8,13 +8,14 @@
   }
 
   .input {
-    @apply rounded bg-primary-dark px-6 py-4 shadow-b outline-none;
+    @apply rounded bg-dark-secondary px-6 py-4 shadow-b outline-none;
   }
 }
 
 /* To Prevent flickering i.e to hide the elements before the animation code executes */
 html.sr #logo,
 html.sr #nav li,
+html.sr #theme-toggle-lottie,
 html.sr #header__resume-btn,
 html.sr #hamburger-btn,
 html.sr body > aside,

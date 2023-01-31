@@ -7,32 +7,36 @@ import Nav from './Nav.astro';
 >
   <div
     id="backdrop"
-    class="invisible fixed inset-0 z-30 h-screen w-screen bg-[rgba(0,0,0,0.4)] opacity-0 backdrop-blur-sm transition-all duration-500"
+    class="invisible fixed inset-0 z-30 h-screen w-screen bg-[rgba(0,0,0,0.4)] opacity-0 backdrop-blur-sm transition-all duration-500 md:hidden"
   >
   </div>
-  <span class="font-cursive text-2xl md:flex-1 md:text-3xl" id="logo"
+  <span class="font-cursive text-2xl md:text-3xl lg:flex-1" id="logo"
     ><a href="/">Rohan Shrestha</a>
   </span>
   <Nav />
-  <span
-    class="hidden lg:inline-block lg:flex-1 lg:text-right"
-    id="header__resume-btn"
-  >
-    <a href="/resume.pdf" target="_blank" class="btn-primary inline-block"
-      >RESUME</a
+  <div class="flex items-center justify-end gap-10 lg:flex-1">
+    <div
+      class="cursor-pointer transition-transform duration-200 hover:scale-110"
     >
-  </span>
-  <button
-    class="relative z-50 flex flex-col gap-1.5 md:hidden"
-    id="hamburger-btn"
-    aria-label="Open the menu"
-  >
-    {
-      [...Array(3)].map(() => (
-        <span class="h-0.5 w-7 rounded-full bg-gray-100 transition-all duration-200" />
-      ))
-    }
-  </button>
+      <div id="theme-toggle-lottie" class="h-10"></div>
+    </div>
+    <span class="hidden lg:inline-block" id="header__resume-btn">
+      <a href="/resume.pdf" target="_blank" class="btn-primary inline-block"
+        >RESUME</a
+      >
+    </span>
+    <button
+      class="relative z-50 flex flex-col gap-1.5 md:hidden"
+      id="hamburger-btn"
+      aria-label="Open the menu"
+    >
+      {
+        [...Array(3)].map(() => (
+          <span class="h-0.5 w-7 rounded-full bg-gray-100 transition-all duration-200" />
+        ))
+      }
+    </button>
+  </div>
 </header>
 
 <style>
@@ -62,4 +66,33 @@ import Nav from './Nav.astro';
 <script>
   import '../scripts/header';
   import '../scripts/hamburgerMenu';
+
+  import lottie from 'lottie-web';
+  import animationData from '../lotties/theme-toggle.json';
+
+  const container = document.getElementById('theme-toggle-lottie')!;
+
+  const animation = lottie.loadAnimation({
+    animationData,
+    container,
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+  });
+
+  if (window.localStorage.getItem('theme') === 'light')
+    animation.goToAndStop(40, true);
+
+  animation.setSpeed(1.75);
+  container.addEventListener('click', () => {
+    if (window.localStorage.getItem('theme') === 'dark') {
+      animation.playSegments([0, 40], true);
+      document.documentElement.classList.remove('dark');
+      window.localStorage.theme = 'light';
+    } else {
+      animation.playSegments([40, 80], true);
+      document.documentElement.classList.add('dark');
+      window.localStorage.theme = 'dark';
+    }
+  });
 </script>

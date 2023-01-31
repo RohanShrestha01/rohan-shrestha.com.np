@@ -14,8 +14,8 @@ module.exports = {
         '1.5xl': '1400px',
       },
       colors: {
-        primary: '#2f3140',
-        'primary-dark': '#272936',
+        'dark-primary': '#2f3140',
+        'dark-secondary': '#272936',
       },
       boxShadow: {
         l: '-5px 0px 20px -3px rgba(23,24,32,0.7)',

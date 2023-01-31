@@ -4,7 +4,7 @@ import { nav } from '../data/site.json';
 ---
 
 <nav
-  class="flex items-center justify-center absolute top-0 right-0 h-screen w-[75vw] bg-primary-dark invisible opacity-0 translate-x-full transition-all duration-500 z-40 shadow-l sm:w-[60vw] md:z-auto md:transform-none md:transition-none md:visible md:opacity-100 md:bg-transparent md:w-auto md:h-auto md:static md:flex-1 md:shadow-none"
+  class="invisible absolute top-0 right-0 z-40 flex h-screen w-[75vw] translate-x-full items-center justify-center bg-dark-secondary opacity-0 shadow-l transition-all duration-500 sm:w-[60vw] md:visible md:static md:z-auto md:h-auto md:w-auto md:flex-1 md:transform-none md:bg-transparent md:opacity-100 md:shadow-none md:transition-none"
   id="nav"
 >
   <ul class="flex flex-col gap-9 md:flex-row md:gap-10">
@@ -17,7 +17,7 @@ import { nav } from '../data/site.json';
         </li>
       ))
     }
-    <li class="text-center mb-5 md:hidden">
+    <li class="mb-5 text-center md:hidden">
       <a href="/resume.pdf" target="_blank" class="btn-primary">RESUME</a>
     </li>
     <li class="md:hidden"><SocialLinks /></li>
@@ -26,7 +26,7 @@ import { nav } from '../data/site.json';
 
 <style>
   .active {
-    border-bottom: 1px solid theme('textColor.gray.100');
+    @apply border-b border-gray-100;
   }
 
   .visible {
