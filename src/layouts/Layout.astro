@@ -24,21 +24,9 @@ import { siteTitle, description } from '../data/site.json';
       is:inline
     ></script>
     <script src="../scripts/animation.ts"></script>
-    <script is:inline>
-      const theme =
-        window.localStorage.getItem('theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light');
-
-      if (theme === 'dark') document.documentElement.classList.add('dark');
-      window.localStorage.setItem('theme', theme);
-    </script>
     <title>{siteTitle}</title>
   </head>
-  <body
-    class="bg-indigo-50 text-neutral-900 transition-[background-color] duration-500 dark:bg-dark-primary dark:text-gray-100"
-  >
+  <body class="bg-dark-primary text-gray-100">
     <Header />
     <SideLayout classes="gap-6 left-5 xl:left-10"><SocialLinks /></SideLayout>
     <SideLayout classes="gap-4 right-5 xl:right-10"><SideNav /></SideLayout>

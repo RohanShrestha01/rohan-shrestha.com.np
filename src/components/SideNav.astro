@@ -10,16 +10,14 @@ import { nav } from '../data/site.json';
           <span class="invisible absolute right-[200%] scale-0 text-xs uppercase transition-all group-hover:visible group-hover:scale-100">
             {name}
           </span>
-          <div
-            class={`h-3.5 w-3.5 cursor-pointer rounded-full border transition-transform group-hover:scale-125`}
-          />
+          <div class="h-3.5 w-3.5 cursor-pointer rounded-full border transition-transform group-hover:scale-125" />
         </a>
       </li>
     ))
   }
 </ul>
 
-<style>
+<style is:global>
   .circle__link .active {
     @apply bg-gray-100;
   }

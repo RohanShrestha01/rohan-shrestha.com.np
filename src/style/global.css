@@ -15,7 +15,6 @@
 /* To Prevent flickering i.e to hide the elements before the animation code executes */
 html.sr #logo,
 html.sr #nav li,
-html.sr #theme-toggle-lottie,
 html.sr #header__resume-btn,
 html.sr #hamburger-btn,
 html.sr body > aside,
@@ -39,4 +38,5 @@ html.sr .screen {
 
 .no-scroll {
   overflow: hidden;
+  padding-right: 12px;
 }

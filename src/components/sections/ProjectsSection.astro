@@ -6,11 +6,6 @@ import { projects } from '../../data/site.json';
 ---
 
 <SectionLayout heading="Projects" id="projects" text="Some things I've built">
-  <div
-    id="astronaut-laptop-lottie"
-    class="absolute right-0 top-16 -z-10 w-[150px] xs:top-10 xs:w-[200px] sm:top-0 sm:w-[250px] lg:left-1/4"
-  >
-  </div>
   <ul
     class="mt-8 flex flex-wrap justify-center gap-10 xs:mt-16 lg:mt-24 lg:block"
   >
@@ -86,18 +81,3 @@ import { projects } from '../../data/site.json';
     }
   </ul>
 </SectionLayout>
-
-<script>
-  import lottie from 'lottie-web';
-  import animationData from '../../lotties/astronaut-laptop.json';
-
-  const container = document.getElementById('astronaut-laptop-lottie')!;
-
-  lottie.loadAnimation({
-    animationData,
-    container,
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-  });
-</script>

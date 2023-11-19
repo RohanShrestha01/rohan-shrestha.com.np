@@ -6,7 +6,7 @@ import { socials } from '../data/site.json';
 <ul class="flex gap-6 xs:gap-8 md:flex-col md:gap-6">
   {
     socials.map(social => (
-      <li>
+      <li class="transition-transform hover:scale-[1.18]">
         <a href={social.link} target="_blank">
           <Icon name={social.icon} class="h-6 cursor-pointer" />
         </a>

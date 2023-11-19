@@ -60,12 +60,33 @@
   ],
   "projects": [
     {
-      "title": "Sudoku",
-      "description": "A sudoku puzzle game with different difficulty, game modes (Timer, Countdown and Hints) and functionalities like pausing timer, marking incorrect numbers red, resetting board, showing solution etc.",
-      "languages": ["HTML5", "CSS3", "JavaScript", "API"],
-      "githubLink": "https://github.com/RohanShrestha01/sudoku",
-      "websiteLink": "https://websudoku.netlify.app/",
-      "imageLink": "/sudoku.webp"
+      "title": "Form Builder",
+      "description": "A Full Stack MERN app for building dynamic forms with drag and drop interface & to track and view the responses received in the created form. Authentication with JSON web tokens, reset password and more.",
+      "languages": [
+        "MERN",
+        "Shadcn UI",
+        "TanStack Query",
+        "TypeScript",
+        "Tailwind"
+      ],
+      "githubLink": "https://github.com/RohanShrestha01/form-builder",
+      "websiteLink": "https://easyformbuilder.netlify.app/",
+      "imageLink": "/form-builder.webp"
+    },
+    {
+      "title": "Task Planner",
+      "description": "A task planner app with Kanban Board, Calendar View, CRUD functionality, search, sorting and ordering, dark and light mode, lottie animations, authentication using NextAuth and database using Prisma, PlanetScale(hosting) and MySQL.",
+      "languages": [
+        "NextJS",
+        "Prisma",
+        "NextAuth",
+        "TypeScript",
+        "Tailwind",
+        "TanStack Query"
+      ],
+      "githubLink": "https://github.com/RohanShrestha01/task-planner",
+      "websiteLink": "https://tasksplanner.vercel.app",
+      "imageLink": "/task-planner.webp"
     },
     {
       "title": "Firestore",
@@ -82,27 +103,12 @@
       "imageLink": "/firestore.webp"
     },
     {
-      "title": "Portfolio Site",
-      "description": "My Personal Website built with Astro for fast website and good developer experience (DX) and Tailwind for styling.",
-      "languages": ["Astro", "Tailwind", "TypeScript"],
-      "githubLink": "https://github.com/RohanShrestha01/rohanshrestha.dev",
-      "websiteLink": "https://rohanshrestha.dev",
-      "imageLink": "/portfolio-site.webp"
-    },
-    {
-      "title": "Task Planner",
-      "description": "A task planner app with Kanban Board, Calendar View, CRUD functionality, search, sorting and ordering, dark and light mode, lottie animations, authentication using NextAuth and database using Prisma, PlanetScale(hosting) and MySQL.",
-      "languages": [
-        "NextJS",
-        "Prisma",
-        "NextAuth",
-        "TypeScript",
-        "Tailwind",
-        "TanStack Query"
-      ],
-      "githubLink": "https://github.com/RohanShrestha01/task-planner",
-      "websiteLink": "https://tasksplanner.vercel.app",
-      "imageLink": "/task-planner.webp"
+      "title": "Sudoku",
+      "description": "A sudoku puzzle game with different difficulty, game modes (Timer, Countdown and Hints) and functionalities like pausing timer, marking incorrect numbers red, resetting board, showing solution etc.",
+      "languages": ["HTML5", "CSS3", "JavaScript", "API"],
+      "githubLink": "https://github.com/RohanShrestha01/sudoku",
+      "websiteLink": "https://websudoku.netlify.app/",
+      "imageLink": "/sudoku.webp"
     }
   ]
 }

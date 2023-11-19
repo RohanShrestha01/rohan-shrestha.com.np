@@ -15,11 +15,6 @@ import Nav from './Nav.astro';
   </span>
   <Nav />
   <div class="flex items-center justify-end gap-10 lg:flex-1">
-    <div
-      class="cursor-pointer transition-transform duration-200 hover:scale-110"
-    >
-      <div id="theme-toggle-lottie" class="h-10"></div>
-    </div>
     <span class="hidden lg:inline-block" id="header__resume-btn">
       <a href="/resume.pdf" target="_blank" class="btn-primary inline-block"
         >RESUME</a
@@ -55,8 +50,9 @@ import Nav from './Nav.astro';
   }
 
   .scroll-header {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(47, 49, 64, 0.85);
     padding-top: 1rem;
     padding-bottom: 1rem;
     box-shadow: theme(boxShadow.b);
@@ -66,33 +62,4 @@ import Nav from './Nav.astro';
 <script>
   import '../scripts/header';
   import '../scripts/hamburgerMenu';
-
-  import lottie from 'lottie-web';
-  import animationData from '../lotties/theme-toggle.json';
-
-  const container = document.getElementById('theme-toggle-lottie')!;
-
-  const animation = lottie.loadAnimation({
-    animationData,
-    container,
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-  });
-
-  if (window.localStorage.getItem('theme') === 'light')
-    animation.goToAndStop(40, true);
-
-  animation.setSpeed(1.75);
-  container.addEventListener('click', () => {
-    if (window.localStorage.getItem('theme') === 'dark') {
-      animation.playSegments([0, 40], true);
-      document.documentElement.classList.remove('dark');
-      window.localStorage.theme = 'light';
-    } else {
-      animation.playSegments([40, 80], true);
-      document.documentElement.classList.add('dark');
-      window.localStorage.theme = 'dark';
-    }
-  });
 </script>
