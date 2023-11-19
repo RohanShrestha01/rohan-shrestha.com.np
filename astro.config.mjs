@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://rohanshrestha.dev',
+  site: 'https://rohan-shrestha.com.np',
   integrations: [tailwind(), sitemap()],
 });
